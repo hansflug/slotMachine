@@ -113,6 +113,16 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
             }
         }
     }
+    
+    @IBAction func restart(_ sender: UIButton) {
+        bet100 = false
+        bet500 = false
+        resultLabel.text = ""
+        winMoney.text = "0"
+        ownMoney.text = "5000"
+    }
+    
+    
     // function which returns the number of 'columns' to display.
     @available(iOS 2.0, *)
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
