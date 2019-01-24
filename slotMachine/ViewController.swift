@@ -27,6 +27,8 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var ownMoney: UILabel!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var resultLabel: UILabel!
+    var bet100: Bool = false
+    var bet500: Bool = false
     var imageArray:[UIImage]!
     
     override func viewDidLoad() {
@@ -54,6 +56,18 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         pickerView.dataSource = self
     }
     
+    @IBAction func bet500(_ sender: UIButton) {
+        bet100 = false
+        bet500 = true
+    }
+    
+    
+    @IBAction func bet100(_ sender: UIButton) {
+        bet100 = true
+        bet500 = false
+    }
+    
+    
     @IBAction func spin(_ sender: UIButton) {
         var win = false
         var numInRow = -1
@@ -63,8 +77,11 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         if ownnedMoney>0{
             for i in 0..<5{
                 let newValue = Int(arc4random_uniform(UInt32(imageArray.count)))
+                print("NEW VALUE: ", newValue)
                 if newValue == lastVal{
+                    print("NEW numInRow: ", numInRow)
                     numInRow += 1
+                     print("NEW numInRow2: ", numInRow)
                 }else {
                     numInRow = 1
                 }
@@ -72,9 +89,17 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
                 
                 pickerView.selectRow(newValue, inComponent: i, animated: true)
                 pickerView.reloadComponent(i)
-                ownnedMoney = ownnedMoney - 50
+                if bet100 == true{
+                    ownnedMoney = ownnedMoney - 20
+                }
+                else if bet500 == true{
+                    ownnedMoney = ownnedMoney - 100
+                }
+                else{
+                    ownnedMoney = ownnedMoney - 50
+                }
                 ownMoney.text = String(ownnedMoney)
-                if numInRow >= 2{
+                if numInRow >= 3{
                     winnedMoney = winnedMoney + 500
                     ownnedMoney = ownnedMoney + 500
                     winMoney.text = String(winnedMoney)
@@ -82,9 +107,9 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
                     win = true
                 }
             }
-            resultLabel.text = win ? "WINNER!!!!" : ""
+            resultLabel.text = win ? "YOU WON" : ""
             if ownnedMoney == 0{
-                resultLabel.text = "You Lose!"
+                resultLabel.text = "You Lose :("
             }
         }
     }
@@ -93,7 +118,6 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return    5
     }
-    
     
     // function which returns the number of rows in each component..
     @available(iOS 2.0, *)
