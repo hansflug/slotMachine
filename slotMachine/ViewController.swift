@@ -151,6 +151,7 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
+    //restart function
     @IBAction func restart(_ sender: UIButton) {
        bet500  = false
        bet100  = false
@@ -163,8 +164,8 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         }
      }
     
+    
     // function which returns the number of 'columns' to display.
-
     public func numberOfComponents(in pickerView: UIPickerView) -> Int{
         return    5
     }
@@ -183,12 +184,14 @@ class ViewController: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSo
         return 32
     }
     
+    // function which returns the emojis' image versions as component..
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let image = imageArray[row]
         let imageView = UIImageView(image: image)
         return imageView
     }
     
+    //alerting Message function
     func alertMessage(){
         if i == 0{
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
