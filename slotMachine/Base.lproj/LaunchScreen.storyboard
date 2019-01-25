@@ -18,22 +18,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="🤩🤩🤩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="849-hG-SV6">
-                                <rect key="frame" x="25" y="308" width="307" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤩🤩🤩" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="849-hG-SV6">
+                                <rect key="frame" x="25" y="380" width="334" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="THE SLOT MACHINE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfy-nW-mbo">
-                                <rect key="frame" x="25" y="192" width="307" height="118"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="THE SLOT MACHINE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfy-nW-mbo">
+                                <rect key="frame" x="25" y="326" width="334" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="356" id="cfR-Zb-9Zc"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="849-hG-SV6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="4Za-z6-dc1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Nfy-nW-mbo" secondAttribute="trailing" constant="16" id="AKv-EB-uWN"/>
+                            <constraint firstItem="Nfy-nW-mbo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="346" id="VdX-sI-yel"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="849-hG-SV6" secondAttribute="bottom" constant="239" id="dcd-Uk-hmn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="849-hG-SV6" secondAttribute="trailing" constant="16" id="efE-fF-H0g"/>
+                            <constraint firstItem="849-hG-SV6" firstAttribute="top" secondItem="Nfy-nW-mbo" secondAttribute="bottom" constant="18" id="hS1-Vi-XAK"/>
+                            <constraint firstItem="Nfy-nW-mbo" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="rtq-YK-f0p"/>
+                            <constraint firstItem="849-hG-SV6" firstAttribute="top" secondItem="Nfy-nW-mbo" secondAttribute="bottom" constant="18" id="xWJ-w8-ft0"/>
+                            <constraint firstItem="Nfy-nW-mbo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="306" id="z1Q-rV-eAQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
